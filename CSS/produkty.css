@@ -1,0 +1,23 @@
+#filtr{
+    background: #1b1c1b;
+    border-right: black solid 1px;
+    border-bottom: black solid 1px;
+
+    /*height: 861px; !*nie umiem inaczej*!*/
+
+    /*position: sticky;*/
+    /*top:8%;*/
+
+}
+.Inf{
+    font-size: 15px;
+    color: #c5d4c5;
+    font-family: Marker Felt, fantasy;
+}
+#listaP{
+    font-size: 15px;
+    color: whitesmoke;
+    font-family: Marker Felt, fantasy;
+    margin-bottom: 20px;
+
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>GreenPlace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_look.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/a5277cda1d.js" crossorigin="anonymous"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/add_products.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body class='d-flex flex-column'>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="informacje.html">Informacje</a>
+    <a href="produkty.html">Produkty</a>
+    <a href="uslugi.html">Usługi</a>
+    <a href="galerion.html">Galeria</a>
+</div>
+
+<div class="container-fluid">
+    <div class="row" id="Pasek">
+        <div class="col-3" id="name">
+            <span onclick="location.href='StronaG.html';"  >GreenPlace</span>
+        </div>
+
+        <div class="col-3" id="menu">
+            <div class="row">
+                <div class="col-4 offset-md-8">
+                    <span style="font-size:30px;cursor:pointer;color:white;font-family: Marker Felt, fantasy;" onclick="openNav()">menu &#9776;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container flex-grow-1 d-flex flex-column" id="main">
+
+<div class="row py-3">
+
+    <div class="col">
+
+        <label for="nazwa" style="color:whitesmoke;">Nazwa produktu</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control other" id="nazwa" aria-describedby="basic-addon3">
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="row py-3">
+
+        <div class="col">
+
+            <label for="firma" style="color:whitesmoke;">Firma</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control other" id="firma" aria-describedby="basic-addon3">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row py-3">
+
+        <div class="col">
+
+            <label for="cena" style="color:whitesmoke;">Cena</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control other" id="cena" aria-describedby="basic-addon3">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row py-3">
+
+        <div class="col">
+
+            <label for="typP" style="color:whitesmoke;">Typ produktu</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control other" id="typP" aria-describedby="basic-addon3">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row py-3">
+
+        <div class="col">
+
+            <label for="typR" style="color:whitesmoke;">Typ rośliny</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control other" id="typR" aria-describedby="basic-addon3">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row py-3" style="display: flex; align-items: center; justify-content: center;">
+
+        <div class="col-4">
+
+            <button type="button" class="btn btn-dark" onclick="addProduct();">Dodaj</button>
+
+        </div>
+
+        <div class="col-4">
+
+            <button type="button" class="btn btn-dark" onclick="erase();">Usun wszystkie produkty</button>
+
+        </div>
+
+        <div class="col-4">
+
+            <label for="usun" style="color:whitesmoke;">Numer produktu do usunięcia z listy.</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="usun" aria-describedby="basic-addon3">
+            </div>
+
+            <button type="button" class="btn btn-dark" onclick="eraseParticular();">Usun produkt o danej pozycji</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

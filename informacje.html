@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>GreenPlace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_look.css" type="text/css" />
+    <link rel="stylesheet" href="css/informacje.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/a5277cda1d.js" crossorigin="anonymous"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body class='d-flex flex-column'>
+<div id="mySidenav" class="sidenav">
+    <a href="informacje.html">Informacje</a>
+    <a href="produkty.html">Produkty</a>
+    <a href="uslugi.html">Usługi</a>
+    <a href="galerion.html">Galeria</a>
+</div>
+
+<div class="container-fluid topbar">
+    <div class="row" id="Pasek">
+        <div class="col-6" id="name">
+            <a href="./strona_g.html">GreenPlace</a>
+        </div>
+        <div class="col-6" id="menu">
+            <div class="row">
+                <div class="col-4 offset-md-8">
+                    <div id="menu-btn">
+                        <span id="menu-btn-inner" class="menu-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container flex-grow-1 d-flex flex-column" id="main">
+
+    <div class="row">
+
+        <div class="col-5" >
+
+            <div style="text-align: center; position: relative; top: 80px;">
+
+             <span class="Inf">Nasza lokalizacja <i class="fas fa-arrow-right"></i> </span>
+
+             <p>Ulica: 11 Listopada</p>
+             <p>Miasto: Siedlce</p>
+             <p>Kraj: Polska</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-5 py-3 offset-md-2">
+
+            <div id="map">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-5 py-3">
+
+            <img id="XD" src="img/XD.jpg" alt="XD">
+
+        </div>
+
+        <div class="col-5 offset-md-2">
+
+            <div style="text-align: center; position: relative; top: 40px;">
+
+            <span class="Inf"><i class="fas fa-arrow-left"></i> Nasza ekipa</span>
+
+            <p>Nasi pracownicy to doświadczona i uzdolniona ekipa.</p>
+            <p>Każdy ma swoją rolę w naszej firmie i wykonuje ją z pełnym zaangażowaniem.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-5">
+
+            <div style="text-align: center; position: relative; top: 60px;">
+
+            <span class="Inf">Asortyment</span>
+
+                <p>W naszym sklepie znajdziesz rośliny których nigdy wcześniej nie widziałeś!</p>
+                <p>Szeroki wybór lokalnych i egzotycznych warzyw i owoców!</p>
+                <p>Akcesoria i ozdoby ogrodowe także są u Nas dostępne.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-5 py-3 offset-md-2">
+
+            <img id="roslinki" src="img/Roslinki.jpg" alt="roslinki">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function initMap() {
+
+        var sklep = {lat: 52.175004, lng: 22.276449};
+
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: sklep});
+
+        var marker = new google.maps.Marker({position: sklep, map: map});
+    }
+
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1v29RAF58Ilpn3x3TJ65sGkDBDJxFeEI&callback=initMap">
+</script>
+
+</body>
+</html>

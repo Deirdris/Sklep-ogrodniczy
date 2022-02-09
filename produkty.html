@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>GreenPlace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_look.css" type="text/css" />
+    <link rel="stylesheet" href="css/produkty.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/a5277cda1d.js" crossorigin="anonymous"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/load_products.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body class='d-flex flex-column'>
+<div id="mySidenav" class="sidenav">
+    <a href="informacje.html">Informacje</a>
+    <a href="produkty.html">Produkty</a>
+    <a href="uslugi.html">Usługi</a>
+    <a href="galerion.html">Galeria</a>
+</div>
+
+<div class="container-fluid topbar">
+    <div class="row" id="Pasek">
+        <div class="col-4" id="name">
+            <a href="./strona_g.html">GreenPlace</a>
+        </div>
+
+        <div class="col-4" id="szukajka">
+
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchbar" placeholder="Wyszukaj">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" onclick="filter();">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-4" id="menu">
+            <div class="row">
+                <div class="col-4 offset-md-8">
+                    <div id="menu-btn">
+                        <span id="menu-btn-inner" class="menu-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container flex-grow-1 d-flex flex-column" id="main">
+
+        <div class="row">
+
+            <div class="col-4" id="filtr">
+                <div class="container d-flex flex-column" style="position: sticky; top: 8%;">
+                    <div class="row py-3" style="border-bottom: black solid 1px;">
+
+                        <div class="col" style="text-align: center;">
+
+                            <label for="cenamin" class="Inf">Cena Minimalna</label>
+
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="cenamin" aria-label="Zlotowki" value="0">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">zł</span>
+                                </div>
+                            </div>
+
+                            <label for="cenamax" class="Inf">Cena Maksymalna</label>
+
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="cenamax" aria-label="Zlotowki" value="9999">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">zł</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3" style="border-bottom: black solid 1px;">
+
+                        <div class="col" style="text-align: center;">
+
+                            <span class="Inf" style="font-size: 20px;">Typ produktu:</span>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typP' id="typ1" value="Akcesoria">
+                                <label class="form-check-label Inf" for="typ1">
+                                    Akcesoria
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typP' id="typ2" value="Nasiona">
+                                <label class="form-check-label Inf" for="typ2">
+                                    Nasiona
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typP' id="typ3" value="Rośliny doniczkowe">
+                                <label class="form-check-label Inf" for="typ3">
+                                    Rośliny doniczkowe
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typP' id="typ4" value="Rośliny ogrodowe">
+                                <label class="form-check-label Inf" for="typ4">
+                                    Rośliny ogrodowe
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3" style="border-bottom: black solid 1px;">
+
+                        <div class="col" style="text-align: center;">
+
+                            <span class="Inf" style="font-size: 20px;">Firma:</span>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='firma' id="firma1" value="Nasionex">
+                                <label class="form-check-label Inf" for="firma1">
+                                    Nasionex
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='firma' id="firma2" value="Doniczkex">
+                                <label class="form-check-label Inf" for="firma2">
+                                    Doniczkex
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='firma' id="firma3" value="Ogrodnix">
+                                <label class="form-check-label Inf" for="firma3">
+                                    Ogrodnix
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='firma' id="firma4" value="Zielonex">
+                                <label class="form-check-label Inf" for="firma4">
+                                    Zielonex
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3" style="border-bottom: black solid 1px;">
+
+                        <div class="col" style="text-align: center;">
+
+                            <span class="Inf" style="font-size: 20px;">Typ roślin:</span>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typR' id="typp1" value="Egzotyczne">
+                                <label class="form-check-label Inf" for="typp1">
+                                    Egzotyczne
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typR' id="typp2" value="Drzewiaste">
+                                <label class="form-check-label Inf" for="typp2">
+                                    Drzewiaste
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typR' id="typp3" value="Ozdobne">
+                                <label class="form-check-label Inf" for="typp3">
+                                    Ozdobne
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typR' id="typp4" value="Warzywne">
+                                <label class="form-check-label Inf" for="typp4">
+                                    Warzywne
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='typR' id="typp5" value="Owocowe">
+                                <label class="form-check-label Inf" for="typp5">
+                                    Owocowe
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3 d-flex flex-grow-1 align-items-center justify-content-center">
+                            <button type="button" id="filtruj" class="btn btn-dark btn-lg w-100 Inf" style="font-size: 20px;" onclick="filter();">Filtruj</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-8" id="listaP"></div>
+        </div>
+
+    </div>
+    <script>
+        let products = JSON.parse(localStorage.getItem('lista'));
+
+        displayProducts(products);
+    </script>
+</body>
+</html>
